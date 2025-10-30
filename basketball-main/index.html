@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hoopers Den - Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --accent-blue: #3c91e6;
+    --accent-green: #4cd964;
+    --neutral-light: #dfe3e6;
+    --neutral-lighter: #f2f4f5;
+    --neutral-card: #ffffff;
+    --neutral-border: #d1d1d1;
+    --neutral-text: #2f2f2f;
+    --neutral-subtext: #5c5c5c;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(images/basketball-login-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: linear-gradient(145deg, var(--neutral-light), var(--neutral-lighter)); */
+    color: var(--neutral-text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  .login-container {
+    background: #ffffffe8;
+    padding: 3rem 2.5rem;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    border: 1px solid var(--neutral-border);
+    text-align: center;
+  }
+  .login-container h2 {
+    margin-bottom: 2rem;
+    color: var(--accent-blue);
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+  form {
+    width: 100%;
+  }
+  label {
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--neutral-text);
+  }
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    max-width: 370px;
+    padding: 12px 14px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--neutral-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--neutral-text);
+    background: var(--neutral-lighter);
+    transition: border-color 0.3s ease;
+  }
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: var(--accent-blue);
+    outline: none;
+  }
+  button[type="submit"] {
+    width: 100%;
+    padding: 14px 0;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent-blue);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  button[type="submit"]:hover {
+    background: var(--accent-green);
+  }
+  .footer-text {
+     margin-top: 1.5rem;
+    font-size: 13px;
+    color: var(--neutral-subtext);
+    display: flex;
+    text-align: left;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .footer-text a {
+    color: #262626b8;
+    text-decoration: none;
+    font-weight: 500;
+}
+  /* .footer-text a:hover {
+    color: var(--accent-green);
+  } */
+  @media (max-width: 420px) {
+    .login-container {
+      padding: 2rem 1.5rem;
+    }
+    .login-container h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Hoopers Den App</h2>
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="email">User Name</label>
+      <input type="email" id="email" placeholder="Enter your email" required  />
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required />
+      <button type="submit">Sign In</button>
+    </form>
+    <div class="footer-text">
+      <img src="images/information.png" style="width: 19px; margin-top: 4px;"> <a>User Name: Any Valid email<br>Password: pas123@</a>
+      <!-- Don't have an account? <a href="#">Register here</a> -->
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      
+      if (email && password) {
+        window.location.href = 'home.html';
+      }
+    });
+  </script>
+</body>
+</html>
